@@ -54,9 +54,16 @@ class User
      */
     private $articles;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
+        $this->createdAt = new \DateTime();
+        
     }
 
     public function getId(): ?int
@@ -170,4 +177,6 @@ class User
     {
         return $this->lastname. ' ' .$this->firstname;
     }
+
+    
 }

@@ -6,16 +6,15 @@
             <ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
               
               <!-- Menu items-->
-              <li><a class="dropdown-item active" href="/">Home</a></li>
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catalog</a>
+              <li><a class="dropdown-item active" href="/">Accueil</a></li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catalogues</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="city-guide-catalog.html">Grid with Filters</a></li>
-                  <li><a class="dropdown-item" href="city-guide-single.html">Single Place - Gallery</a></li>
-                  <li><a class="dropdown-item" href="city-guide-single-info.html">Single Place - Info</a></li>
-                  <li><a class="dropdown-item" href="city-guide-single-reviews.html">Single Place - Reviews</a></li>
+                {% for categorie in categories %}
+                  <li><a class="dropdown-item" href="{{ path('show-article', {'id':categorie.id} )}}">{{categorie.name}}</a></li>
+                {% endfor %}
                 </ul>
               </li>
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Parametres</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="city-guide-account-info.html">Personal Info</a></li>
                   <li><a class="dropdown-item" href="city-guide-account-favorites.html">Favorites</a></li>
@@ -23,7 +22,7 @@
                   <li><a class="dropdown-item" href="city-guide-account-notifications.html">Notifications</a></li>
                 </ul>
               </li>
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Vendor</a>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gestion Activés</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="city-guide-add-business.html">Add Business</a></li>
                   <li><a class="dropdown-item" href="city-guide-business-promotion.html">Business Promotion</a></li>
@@ -36,8 +35,7 @@
                   <li><a class="dropdown-item" href="city-guide-blog-single.html">Single Post</a></li>
                 </ul>
               </li>
-              <li class="nav-item dropdown"><a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contact</a>
-              </li>
+              <li><a class="dropdown-item" href="#">Contactez-nous</a></li>
               <li class="nav-item d-lg-none"><a class="nav-link" href="#signin-modal" data-bs-toggle="modal"><i class="fi-user me-2"></i>Sign in</a></li>
             </ul>
           </div>

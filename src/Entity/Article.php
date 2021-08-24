@@ -60,9 +60,16 @@ class Article
      */
     private $author;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=false)
+     */
+    private $createdAt;
+
     public function __construct()
     {
         $this->categorie = new ArrayCollection();
+        $this->creatDate= new \DateTime();
+        $this->createdAt = new \DateTime();
     }
 
     public function getId(): ?int
@@ -130,17 +137,6 @@ class Article
         return $this;
     }
 
-    public function getCreatDate(): ?\DateTime
-    {
-        return $this->creatDate;
-    }
-
-    public function setCreatDate(\DateTime $creatDate): self
-    {
-        $this->creatDate = $creatDate;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Categorie[]
@@ -174,6 +170,18 @@ class Article
     public function setAuthor(?User $author): self
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTime
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(?\DateTime $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

@@ -32,7 +32,7 @@ class ArticleCrudController extends AbstractCrudController
                         ->setRequired(false),
             TextEditorField::new('detail'),
             AssociationField::new('author'),
-            DateField::new('creatDate')
+            
         ];
     }
     
